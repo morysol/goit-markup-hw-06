@@ -424,12 +424,12 @@
                 type="email"
                 name="subscribe-email"
                 placeholder="E-mail"
-                class="input-email-txt"
+                class="input-subscribe"
               />
 
-              <button type="submit" class="submit-button send-button">
+              <button type="submit" class="submit-button">
                 Подписаться
-                <svg class="social-icon">
+                <svg class="submit-icon" width="24" height="24">
                   <use href="./images/icons.svg#icon-send"></use>
                 </svg>
               </button>
@@ -442,7 +442,7 @@
     <div id="backdrop" class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="close-button" data-modal-close>
-          <svg class="close-modal">
+          <svg class="close-modal" width="11" height="11">
             <use href="./images/icons.svg#close-icon"></use>
           </svg>
         </button>
@@ -483,21 +483,22 @@
               class="client-comment"
             ></textarea>
             <div class="agree-container">
-              <input
-                type="checkbox"
-                name="client-agree"
-                value="client-agree"
-                id="client-agree"
-                class="client-agree visually-hidden"
-              />
-
-              <svg class="agree-check" width="16" height="15">
-                <use href="./images/icons.svg#icon-check"></use>
-              </svg>
-              <label for="client-agree" class="label-agree">
+              <label class="label-agree">
+                <input
+                  type="checkbox"
+                  name="client-agree"
+                  value="client-agree"
+                  id="client-agree"
+                  class="client-agree"
+                />
+                <span class="agree-check">
+                  <svg width="16" height="15">
+                    <use href="./images/icons.svg#icon-check"></use>
+                  </svg>
+                </span>
                 Соглашаюсь с рассылкой и принимаю
+                <a href="#" class="agree-link">Условия договора</a>
               </label>
-              <a href="#" class="agree-link">Условия договора</a>
             </div>
             <button type="submit" class="submit-button">Отправить</button>
           </div>

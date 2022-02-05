@@ -585,12 +585,11 @@ img {
 }
 
 .left-panel {
-  width: 25%;
+  margin-right: 70px;
 }
 
 .rigth-panel {
-  /* margin-left: 70px; */
-  width: 25%;
+  margin-right: 93px;
 }
 
 .footer-form {
@@ -602,7 +601,7 @@ img {
   justify-content: space-between;
 }
 
-.input-email-txt {
+.input-subscribe {
   flex-grow: 1;
   margin-right: 12px;
 
@@ -614,11 +613,15 @@ img {
   letter-spacing: 0.03em;
 
   color: rgba(255, 255, 255, 0.6);
-  background-color: currentColor;
+  background-color: rgba(255, 255, 255, 0);
 
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+}
+
+.submit-icon {
+  margin-left: 12px;
 }
 
 .rigth-panel-title,
@@ -838,56 +841,36 @@ img {
   transition: transform 250ms var(--function-time);
 }
 
-.close-modal {
+.close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 8px;
+  right: 8px;
 
   width: 30px;
   height: 30px;
 
-  fill: currentColor;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
-  visibility: visible;
-}
-
-.close-button {
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  margin: 8px;
-
-  color: var(--color-button-bg);
+  color: var(--color-logo);
+  background-color: var(--color-button-txt-on);
 
   cursor: pointer;
-  visibility: hidden;
   transition: color 250ms var(--function-time);
 }
 
-/* ??????????????????? */
-.close-button:hover {
-  color: var(--color-link-on);
+.close-modal {
+  fill: currentColor;
+  transition: fill 250ms var(--function-time);
 }
 
-.close-cross:hover {
-  fill: cyan;
-  stroke: magenta;
-  color: yellow;
+.close-button:hover .close-modal {
+  fill: var(--color-link-on);
 }
-
-.qweqwe {
-  fill: yellow;
-  stroke: magenta;
-  color: yellow;
-}
-
-#MyRect {
-  fill: red;
-  stroke: black;
-}
-
-/* ----???????? */
 
 .form-container {
   width: 448px;
@@ -975,12 +958,9 @@ img {
 }
 
 .agree-container {
+  position: relative;
+  position: relative;
   width: 100%;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: space-around;
 
   margin-bottom: 30px;
   margin-left: auto;
@@ -988,32 +968,72 @@ img {
 }
 
 .agree-check {
-  transition: fill 250ms var(--function-time);
+  position: absolute;
+  margin-left: -24px;
+
+  width: 1em;
+  height: 1em;
+
+  fill: var(--color-H1);
+  stroke: var(--color-logo);
+  stroke-width: 1px;
+
+  /* background-image: url(./images/icons.svg#icon-check); */
 }
 
-.agree-container:hover .agree-check {
-  fill: var(--color-button-bg-on);
+.label-agree {
+  display: flex;
+  align-items: center;
+
+  padding-left: 32px;
+
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+
+.client-agree {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: absolute;
 }
 
 .client-agree:checked {
   background-color: var(--color-link-on);
 }
 
-.label-agree {
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
+/* .agree-check {
+  stroke-width: 1px;
+} */
+
+.client-agree:focus + .agree-check {
+  stroke: var(--color-logo);
+  stroke-linejoin: round;
+  stroke-width: 5px;
+}
+
+.client-agree:checked + .agree-check {
+  stroke: none;
+  fill: var(--color-link-on);
 }
 
 .agree-link {
+  margin-left: 2px;
+
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+  text-decoration: underline;
 
   color: var(--color-link-on);
 }
 
 .submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 200px;
   height: 50px;
 
